@@ -1,0 +1,8 @@
+# jupyter notebooks #
+#################
+*.ipynb
+
+
+# datasets #
+#########
+Computer Vision/car-or-truck
