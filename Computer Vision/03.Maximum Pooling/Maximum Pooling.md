@@ -23,7 +23,7 @@ plt.rc('image', cmap='inferno')
 
 
 ```python
-image_path = './Nekko.jpg'
+image_path = '../Nekko.jpg'
 image = tf.io.read_file(image_path)
 image = tf.io.decode_jpeg(image, channels=1)
 image = tf.image.resize(image, size=[400, 400])
@@ -148,7 +148,7 @@ model = tf.keras.Sequential([
 
 # Load dataset
 ds = image_dataset_from_directory(
-    './car-or-truck/train',
+    '../car-or-truck/train',
     labels='inferred',
     label_mode='binary',
     image_size=[128, 128],
