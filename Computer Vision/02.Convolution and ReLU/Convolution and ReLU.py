@@ -39,7 +39,7 @@ plt.rc('image', cmap='magma')
 # 이것저것 import 및 matplotlib 기본 설정해주면서 시작.
 
 # +
-image_path = './Nekko.jpg'
+image_path = '../Nekko.jpg'
 image = tf.io.read_file(image_path)
 image = tf.io.decode_jpeg(image, channels=1)
 image = tf.image.resize(image, size=[400, 400])
@@ -101,9 +101,11 @@ for i, (name,kernel) in enumerate(zip(names, kernels)):
         strides=1,
         padding='SAME'
     )
+    print(image_filter)
     plt.subplot(1, 4, i+1)
     plt.imshow(tf.squeeze(image_filter))
     plt.title(name)
+    plt.axis('off')
 plt.tight_layout()
 # -
 
@@ -125,6 +127,7 @@ for i, (name,kernel) in enumerate(zip(names, kernels)):
     plt.subplot(1, 4, i+1)
     plt.imshow(tf.squeeze(image_detect))
     plt.title(name)
+    plt.axis('off')
 plt.tight_layout()
 
 # 앞 단계에서 추출해본 이미지에 ReLU 함수를 적용하여 **특성을 감지**한다.
